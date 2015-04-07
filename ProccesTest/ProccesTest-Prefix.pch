@@ -1,0 +1,6 @@
+// 開発環境だけでデバッグログを表示する。本番環境で情報が漏れることを防ぐ
+#ifdef DEBUG
+    #define DLog(fmt, ...) NSLog((@"[DEBUG] " fmt), ##__VA_ARGS__);
+#else
+    #define DLog(...)
+#endif
