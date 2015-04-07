@@ -1,7 +1,8 @@
 BatteryLogger-for-iOS
 ====
-Overviev
+Overview
 ----
+とりあえず作りました。指導教員の許可は取ってあります！  
 
 ## Description
 
