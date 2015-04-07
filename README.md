@@ -1,6 +1,6 @@
-# BatteryLogger-for-iOS
+BatteryLogger-for-iOS
 ====
-## Overview  
+Overview  
 とりあえず作りました。指導教員の許可は取ってあります！
 
 ## Description
