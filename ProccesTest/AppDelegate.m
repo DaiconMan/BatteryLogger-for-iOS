@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    #ifdef DEBUG
+    [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(dumpSystemStatus:) userInfo:nil repeats:YES];
+    #endif
+    
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
+    // Cache無効
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:0 diskCapacity:0 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
     return YES;
 }
 
@@ -28,6 +39,25 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+#ifdef DEBUG
+    DLog(@"applicationDidEnterBackground");
+#endif
+    
+    /*
+    void (^handler)(void)  = ^{
+        UIApplication* app = [UIApplication sharedApplication];
+        [app endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    };
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:handler];
+    [application setKeepAliveTimeout:600 handler:^{
+        if (!bgTask || bgTask == UIBackgroundTaskInvalid) {
+            UIApplication* app = [UIApplication sharedApplication];
+            bgTask = [app beginBackgroundTaskWithExpirationHandler:handler];
+        }
+    }];
+     */
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -40,6 +70,21 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)dumpSystemStatus:(NSTimer*)timer {
+    [SystemMonitor dump];
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+#ifdef DEBUG
+    DLog(@"performFetchWithCompletionHandler");
+#endif
+    
+    [SystemMonitor dump];
+    
+    // 成功時には UIBackgroundFetchResultNewData を渡して completionHandler を呼ぶ
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 @end

@@ -14,6 +14,10 @@
 		D76362C41AC39C02001AAFDA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76362C31AC39C02001AAFDA /* Images.xcassets */; };
 		D76362C71AC39C02001AAFDA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76362C51AC39C02001AAFDA /* LaunchScreen.xib */; };
 		D76362D31AC39C02001AAFDA /* ProccesTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D76362D21AC39C02001AAFDA /* ProccesTestTests.m */; };
+		D7D29F471AC9354000978D40 /* SystemMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D29F461AC9354000978D40 /* SystemMonitor.m */; };
+		D7D29F4B1AC9A26600978D40 /* CSVFileOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D29F4A1AC9A26600978D40 /* CSVFileOutput.m */; };
+		D7D29F4D1AD289F200978D40 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D29F4C1AD289F200978D40 /* WebKit.framework */; };
+		D7D29F511AD28A6000978D40 /* WebBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D29F501AD28A6000978D40 /* WebBrowserView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		D76362CC1AC39C02001AAFDA /* ProccesTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProccesTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76362D11AC39C02001AAFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76362D21AC39C02001AAFDA /* ProccesTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProccesTestTests.m; sourceTree = "<group>"; };
+		D7D29F451AC9354000978D40 /* SystemMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMonitor.h; sourceTree = "<group>"; };
+		D7D29F461AC9354000978D40 /* SystemMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMonitor.m; sourceTree = "<group>"; };
+		D7D29F481AC9373100978D40 /* ProccesTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ProccesTest-Prefix.pch"; sourceTree = "<group>"; };
+		D7D29F491AC9A26600978D40 /* CSVFileOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVFileOutput.h; sourceTree = "<group>"; };
+		D7D29F4A1AC9A26600978D40 /* CSVFileOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVFileOutput.m; sourceTree = "<group>"; };
+		D7D29F4C1AD289F200978D40 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D7D29F4F1AD28A6000978D40 /* WebBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowserView.h; sourceTree = "<group>"; };
+		D7D29F501AD28A6000978D40 /* WebBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowserView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D29F4D1AD289F200978D40 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +98,16 @@
 				D76362BB1AC39C02001AAFDA /* AppDelegate.m */,
 				D76362BD1AC39C02001AAFDA /* ViewController.h */,
 				D76362BE1AC39C02001AAFDA /* ViewController.m */,
+				D7D29F4F1AD28A6000978D40 /* WebBrowserView.h */,
+				D7D29F501AD28A6000978D40 /* WebBrowserView.m */,
+				D7D29F491AC9A26600978D40 /* CSVFileOutput.h */,
+				D7D29F4A1AC9A26600978D40 /* CSVFileOutput.m */,
+				D7D29F451AC9354000978D40 /* SystemMonitor.h */,
+				D7D29F461AC9354000978D40 /* SystemMonitor.m */,
 				D76362C01AC39C02001AAFDA /* Main.storyboard */,
 				D76362C31AC39C02001AAFDA /* Images.xcassets */,
 				D76362C51AC39C02001AAFDA /* LaunchScreen.xib */,
+				D7D29F4E1AD28A0700978D40 /* Framework */,
 				D76362B61AC39C02001AAFDA /* Supporting Files */,
 			);
 			path = ProccesTest;
@@ -96,6 +116,7 @@
 		D76362B61AC39C02001AAFDA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7D29F481AC9373100978D40 /* ProccesTest-Prefix.pch */,
 				D76362B71AC39C02001AAFDA /* Info.plist */,
 				D76362B81AC39C02001AAFDA /* main.m */,
 			);
@@ -117,6 +138,15 @@
 				D76362D11AC39C02001AAFDA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7D29F4E1AD28A0700978D40 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D7D29F4C1AD289F200978D40 /* WebKit.framework */,
+			);
+			name = Framework;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +198,12 @@
 				TargetAttributes = {
 					D76362B21AC39C02001AAFDA = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = C3HXFWSXD4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D76362CB1AC39C02001AAFDA = {
 						CreatedOnToolsVersion = 6.2;
@@ -220,8 +256,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76362BF1AC39C02001AAFDA /* ViewController.m in Sources */,
+				D7D29F4B1AC9A26600978D40 /* CSVFileOutput.m in Sources */,
+				D7D29F511AD28A6000978D40 /* WebBrowserView.m in Sources */,
 				D76362BC1AC39C02001AAFDA /* AppDelegate.m in Sources */,
 				D76362B91AC39C02001AAFDA /* main.m in Sources */,
+				D7D29F471AC9354000978D40 /* SystemMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -343,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "/Users/KenNishimura/Documents/Program/iOS/ProccesTest/ProccesTest/ProccesTest-Prefix.pch";
 				INFOPLIST_FILE = ProccesTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -353,9 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ProccesTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -412,6 +456,7 @@
 				D76362D81AC39C02001AAFDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76362D91AC39C02001AAFDA /* Build configuration list for PBXNativeTarget "ProccesTestTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +465,7 @@
 				D76362DB1AC39C02001AAFDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
